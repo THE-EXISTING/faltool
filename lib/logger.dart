@@ -44,21 +44,28 @@ class Log {
 
   static void w(Object? message, [StackTrace? stackTrace]) {
     if (!kReleaseMode) {
-      _logger.w(Trace.current(), message, stackTrace);
+      if (message is Error) {
+        _logger.e(message.toString(), message, stackTrace ?? Trace.current());
+      } else {
+        _logger.e(message.toString(), null, stackTrace ?? Trace.current());
+      }
     }
   }
 
   static void e(Object? message, [StackTrace? stackTrace]) {
     if (!kReleaseMode) {
-      _logger.e(Trace.current(), message, stackTrace);
+      if (message is Error) {
+        _logger.e(message.toString(), message, stackTrace ?? Trace.current());
+      } else {
+        _logger.e(message.toString(), null, stackTrace ?? Trace.current());
+      }
     }
   }
-
 
   static void title(Object? message) {
     if (!kReleaseMode) {
       JsonEncoder encoder = const JsonEncoder.withIndent('  ');
-      String prettyPrint = encoder.convert(message);
+      String prettyPrint = encoder.convert(message.toString());
       _printLong(_title(prettyPrint));
     }
   }
@@ -66,14 +73,14 @@ class Log {
   static void success(Object? message) {
     if (!kReleaseMode) {
       JsonEncoder encoder = const JsonEncoder.withIndent('  ');
-      String prettyPrint = encoder.convert(message);
+      String prettyPrint = encoder.convert(message.toString());
       _printLong(_success(prettyPrint));
     }
   }
 
   static void wtf(Object? message, [String? error, StackTrace? stackTrace]) {
     if (!kReleaseMode) {
-      _logger.wtf(Trace.current(), message, stackTrace);
+      _logger.wtf(Trace.current(), message.toString(), stackTrace);
     }
   }
 
