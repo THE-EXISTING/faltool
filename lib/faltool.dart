@@ -13,5 +13,7 @@ export 'package:rxdart/rxdart.dart';
 export 'package:uuid/uuid.dart';
 export 'package:logger/logger.dart';
 export 'package:stack_trace/stack_trace.dart';
+export 'package:enum_to_string/enum_to_string.dart';
+
 
 

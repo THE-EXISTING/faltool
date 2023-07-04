@@ -10,6 +10,15 @@ class Two<A, B> with EquatableMixin {
   final A first;
   final B second;
 
+  Two<A, B> copy({
+    A? first,
+    B? second,
+  }) =>
+      Two(
+        first: first ?? this.first,
+        second: second ?? this.second,
+      );
+
   @override
   List<Object?> get props => [first, second];
 

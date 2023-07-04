@@ -45,9 +45,9 @@ class Log {
   static void w(Object? message, [StackTrace? stackTrace]) {
     if (!kReleaseMode) {
       if (message is Error) {
-        _logger.e(message.toString(), message, stackTrace ?? Trace.current());
+        _logger.w(message.toString(), message, stackTrace ?? Trace.current());
       } else {
-        _logger.e(message.toString(), null, stackTrace ?? Trace.current());
+        _logger.w(message.toString(), null, stackTrace ?? Trace.current());
       }
     }
   }

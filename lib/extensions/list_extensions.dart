@@ -31,6 +31,8 @@ extension ListExtensionX<V> on List<V> {
 extension ListNullableExtensionX<V> on List<V>? {
   bool get isEmptyOrNull => this == null || this?.isEmpty == true;
 
+  bool get isNotEmptyOrNull => !isEmptyOrNull;
+
   bool get isNull => this == null;
   
   bool get isNotNull => this != null;

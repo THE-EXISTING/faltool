@@ -12,6 +12,17 @@ class Three<A, B, C> with EquatableMixin {
   final B second;
   final C third;
 
+  Three<A, B, C> copy({
+    A? first,
+    B? second,
+    C? third,
+  }) =>
+      Three(
+        first: first ?? this.first,
+        second: second ?? this.second,
+        third: third ?? this.third,
+      );
+
   @override
   List<Object?> get props => [first, second, third];
 
