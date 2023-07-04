@@ -1,4 +1,4 @@
-import 'package:faltool/faltool.dart';
+import 'package:faltool/lib.dart';
 
 extension EnumString on String {
   T toEnum<T>(List<T> enumValues) => enumValues.firstWhere((e) => e.toString() == this);

@@ -1,8 +1,8 @@
 import 'dart:async';
 
-import 'package:faltool/faltool.dart';
+import 'package:faltool/lib.dart';
 
-extension ListExtensionX<V> on List<V> {
+extension FalconListExtension<V> on List<V> {
   List<V> removeNulls() => removeNullsFromList(this);
 
   Future<List<T>> mapAsync<T>(Future<T> Function(V e) toElement) async =>
@@ -28,7 +28,7 @@ extension ListExtensionX<V> on List<V> {
   }
 }
 
-extension ListNullableExtensionX<V> on List<V>? {
+extension FalconListNullableExtension<V> on List<V>? {
   bool get isEmptyOrNull => this == null || this?.isEmpty == true;
 
   bool get isNotEmptyOrNull => !isEmptyOrNull;

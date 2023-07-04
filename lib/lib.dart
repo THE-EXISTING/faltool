@@ -1,10 +1,10 @@
-library faltool;
-
 export 'tools/tools.dart';
 export 'logger.dart';
 export 'group_data/group.dart';
 export 'extensions/extensions.dart';
-
+export 'package:equatable/equatable.dart';
+export 'package:flutter_image_compress/flutter_image_compress.dart';
+export 'package:ansicolor/ansicolor.dart';
 export 'package:dartx/dartx.dart';
 export 'package:dartz/dartz.dart'
     hide Function0, Function1, Function2, Function3, Function4;

@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:faltool/faltool.dart';
+import 'package:faltool/lib.dart';
 import 'package:flutter/foundation.dart';
 
 class Log {

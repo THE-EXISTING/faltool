@@ -1,5 +1,4 @@
-import 'package:equatable/equatable.dart';
-import 'package:faltool/faltool.dart';
+import 'package:faltool/lib.dart';
 
 class Three<A, B, C> with EquatableMixin {
   const Three({

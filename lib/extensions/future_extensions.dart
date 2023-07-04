@@ -1,10 +1,7 @@
-import 'package:faltool/faltool.dart';
+import 'package:faltool/lib.dart';
 
-extension FutureExtensionX<T> on Future<T> {
-  // Future<T> thenIf(bool condition, FutureOr<T> onValue(T value)) {
-  //   if (condition) {
-  //     return this.then((value) => onValue(value));
-  //   }
-  //   return this;
-  // }
+extension FalconFutureExtensionX<T> on Future<T> {}
+
+extension FalconEitherFutureExtensions<L, R> on Future<R> {
+  Future<Either<L, R>> get right => then((value) => Right(value));
 }

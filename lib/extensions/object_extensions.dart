@@ -1,4 +1,4 @@
-extension NullableObject<T> on T {
+extension FalconNullableObject<T> on T? {
 
   void let(Function(T data) let) {
     T? data = this;

@@ -1,5 +1,4 @@
-import 'package:equatable/equatable.dart';
-import 'package:faltool/faltool.dart';
+import 'package:faltool/lib.dart';
 
 class Six<A, B, C, D, E, F> with EquatableMixin {
   const Six({
@@ -17,6 +16,23 @@ class Six<A, B, C, D, E, F> with EquatableMixin {
   final D fourth;
   final E fifth;
   final F sixth;
+
+  Six<A, B, C, D, E, F> copy({
+    A? first,
+    B? second,
+    C? third,
+    D? fourth,
+    E? fifth,
+    F? sixth,
+  }) =>
+      Six(
+        first: first ?? this.first,
+        second: second ?? this.second,
+        third: third ?? this.third,
+        fourth: fourth ?? this.fourth,
+        fifth: fifth ?? this.fifth,
+        sixth: sixth ?? this.sixth,
+      );
 
   @override
   List<Object?> get props => [first, second, third, fourth, fifth, sixth];

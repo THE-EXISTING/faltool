@@ -1,6 +1,6 @@
-import 'package:faltool/faltool.dart';
+import 'package:faltool/lib.dart';
 
-extension MapExtensionX<K, V> on Map<K, V> {
+extension FalconMapExtension<K, V> on Map<K, V> {
   Map<K, V> removeNullOrEmptyString() => removeNullsFromMap(this);
 }
 
