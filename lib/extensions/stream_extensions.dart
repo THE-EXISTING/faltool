@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'package:faltool/lib.dart';
 
-extension StreamExtensionX<T> on Stream<T> {
+extension FalconStreamExtension<T> on Stream<T> {
   Stream<S> mapTransform<S>({Function(S data, EventSink<T> sink)? handleData}) {
     return transform(StreamTransformer<T, S>.fromHandlers(
       handleData: (T data, EventSink<S> sink) {},

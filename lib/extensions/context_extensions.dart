@@ -1,6 +1,6 @@
 import 'package:flutter/widgets.dart';
 
-extension ContextExtension on BuildContext {
+extension FalconContextExtension on BuildContext {
   Size get screenSize => MediaQuery.of(this).size;
 
   double get screenHeight => screenSize.height;

@@ -1,5 +1,5 @@
 
-extension DynamicExtensionX on dynamic {
+extension FalconDynamicExtension on dynamic {
 
   double toDoubleOrZero() {
     if(this == null) return 0.0;
