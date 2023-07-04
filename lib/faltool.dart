@@ -7,7 +7,7 @@ export 'extensions/extensions.dart';
 
 export 'package:dartx/dartx.dart';
 export 'package:dartz/dartz.dart'
-    hide Function0, Function1, Function2, Function3, Function4;
+    hide Function0, Function1, Function2, Function3, Function4, OpenFile;
 export 'package:rxdart/rxdart.dart';
 export 'package:uuid/uuid.dart';
 export 'package:logger/logger.dart';
