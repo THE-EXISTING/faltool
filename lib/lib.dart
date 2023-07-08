@@ -7,7 +7,17 @@ export 'package:flutter_image_compress/flutter_image_compress.dart';
 export 'package:ansicolor/ansicolor.dart';
 export 'package:dartx/dartx.dart';
 export 'package:dartz/dartz.dart'
-    hide Function0, Function1, Function2, Function3, Function4;
+    hide
+        Function0,
+        Function1,
+        Function2,
+        Function3,
+        Function4,
+        OpenFile,
+        State,
+        io,
+        id,
+        idF;
 export 'package:rxdart/rxdart.dart';
 export 'package:uuid/uuid.dart';
 export 'package:logger/logger.dart';
