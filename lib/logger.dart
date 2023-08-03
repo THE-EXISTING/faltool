@@ -65,7 +65,7 @@ class Log {
     }
   }
 
-  static void tryCatch(Object error, [StackTrace? stackTrace]) {
+  static void error(Object error, [StackTrace? stackTrace]) {
     if (!kReleaseMode) {
       if (error is Error) {
         _logger.e(error.toString(),
