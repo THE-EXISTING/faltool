@@ -65,6 +65,17 @@ class Log {
     }
   }
 
+  static void tryCatch(Object error, [StackTrace? stackTrace]) {
+    if (!kReleaseMode) {
+      if (error is Error) {
+        _logger.e(error.toString(),
+            error: error, stackTrace: stackTrace ?? error.stackTrace);
+      } else {
+        _logger.e(error.toString(), stackTrace: stackTrace);
+      }
+    }
+  }
+
   static void e(Object message,
       {DateTime? time, Object? error, StackTrace? stackTrace}) {
     if (!kReleaseMode) {
