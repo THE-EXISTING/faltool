@@ -8,6 +8,7 @@ export 'package:ansicolor/ansicolor.dart';
 export 'package:dartx/dartx.dart';
 export 'package:dartz/dartz.dart'
     hide
+        Task,
         Function0,
         Function1,
         Function2,

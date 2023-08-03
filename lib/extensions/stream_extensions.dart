@@ -6,7 +6,7 @@ extension FalconStreamExtension<T> on Stream<T> {
     return transform(StreamTransformer<T, S>.fromHandlers(
       handleData: (T data, EventSink<S> sink) {},
       handleError: (error, stackTrace, sink) {
-        Log.e(error, stackTrace);
+        Log.e(error, stackTrace: stackTrace);
       },
     ));
   }

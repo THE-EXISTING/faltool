@@ -11,13 +11,13 @@ dependencies:
     sdk: flutter
   flutter_lints: ^2.0.2
   equatable: ^2.0.5
-  flutter_image_compress: ^2.0.3
+  flutter_image_compress: ^2.0.4
   ansicolor: ^2.0.1
   uuid: ^3.0.7
   path_provider: ^2.0.15
-  logger: ^1.4.0
+  logger: ^2.0.1
   stack_trace: ^1.11.0
-  dartx: ^1.1.0
+  dartx: ^1.2.0
   rxdart: ^0.27.7
   enum_to_string: ^2.0.1
   dartz: ^0.10.1
