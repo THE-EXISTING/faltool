@@ -26,31 +26,31 @@ class Log {
     );
   }
 
-  static void t(Object message,
+  static void t(Object? message,
       {DateTime? time, Object? error, StackTrace? stackTrace}) {
     if (!kReleaseMode) {
-      _logger.t(message.toString(),
+      _logger.t(message?.toString() ?? 'Null',
           time: time, error: error, stackTrace: stackTrace);
     }
   }
 
-  static void d(Object message,
+  static void d(Object? message,
       {DateTime? time, Object? error, StackTrace? stackTrace}) {
     if (!kReleaseMode) {
-      _logger.d(message.toString(),
+      _logger.d(message?.toString() ?? 'Null',
           time: time, error: error, stackTrace: stackTrace);
     }
   }
 
-  static void i(Object message,
+  static void i(Object? message,
       {DateTime? time, Object? error, StackTrace? stackTrace}) {
     if (!kReleaseMode) {
-      _logger.i(message.toString(),
+      _logger.i(message?.toString() ?? 'Null',
           time: time, error: error, stackTrace: stackTrace);
     }
   }
 
-  static void w(Object message,
+  static void w(Object? message,
       {DateTime? time, Object? error, StackTrace? stackTrace}) {
     if (!kReleaseMode) {
       if (message is Error) {
@@ -59,7 +59,7 @@ class Log {
             error: message,
             stackTrace: stackTrace ?? message.stackTrace);
       } else {
-        _logger.w(message.toString(),
+        _logger.w(message?.toString() ?? 'Null',
             time: time, error: error, stackTrace: stackTrace);
       }
     }
@@ -76,7 +76,7 @@ class Log {
     }
   }
 
-  static void e(Object message,
+  static void e(Object? message,
       {DateTime? time, Object? error, StackTrace? stackTrace}) {
     if (!kReleaseMode) {
       if (message is Error) {
@@ -85,7 +85,7 @@ class Log {
             error: message,
             stackTrace: stackTrace ?? message.stackTrace);
       } else {
-        _logger.e(message.toString(),
+        _logger.e(message?.toString() ?? 'Null',
             time: time, error: error, stackTrace: stackTrace);
       }
     }
@@ -94,7 +94,9 @@ class Log {
   static void title(Object? message) {
     if (!kReleaseMode) {
       JsonEncoder encoder = const JsonEncoder.withIndent('  ');
-      String prettyPrint = encoder.convert(message.toString());
+      String prettyPrint = encoder.convert(
+        message?.toString() ?? 'Null',
+      );
       _printLong(_title(prettyPrint));
     }
   }
@@ -102,15 +104,17 @@ class Log {
   static void success(Object? message) {
     if (!kReleaseMode) {
       JsonEncoder encoder = const JsonEncoder.withIndent('  ');
-      String prettyPrint = encoder.convert(message.toString());
+      String prettyPrint = encoder.convert(
+        message?.toString() ?? 'Null',
+      );
       _printLong(_success(prettyPrint));
     }
   }
 
-  static void f(Object message,
+  static void f(Object? message,
       {DateTime? time, Object? error, StackTrace? stackTrace}) {
     if (!kReleaseMode) {
-      _logger.f(message.toString(),
+      _logger.f(message?.toString() ?? 'Null',
           time: time, error: error, stackTrace: stackTrace);
     }
   }
