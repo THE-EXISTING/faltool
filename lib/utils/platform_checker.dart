@@ -1,5 +1,4 @@
 import 'package:faltool/lib.dart';
-import 'package:universal_io/io.dart';
 import 'package:universal_html/html.dart' as html;
 import 'package:flutter/foundation.dart';
 

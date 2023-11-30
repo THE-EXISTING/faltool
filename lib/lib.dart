@@ -4,6 +4,7 @@ export 'group_data/group.dart';
 export 'extensions/extensions.dart';
 export 'utils/utils.dart';
 
+export 'package:universal_io/io.dart';
 export 'package:equatable/equatable.dart';
 export 'package:image_compression_flutter/image_compression_flutter.dart';
 export 'package:ansicolor/ansicolor.dart';
