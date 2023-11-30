@@ -2,8 +2,10 @@ export 'tools/tools.dart';
 export 'logger.dart';
 export 'group_data/group.dart';
 export 'extensions/extensions.dart';
+export 'utils/utils.dart';
+
 export 'package:equatable/equatable.dart';
-export 'package:flutter_image_compress/flutter_image_compress.dart';
+export 'package:image_compression_flutter/image_compression_flutter.dart';
 export 'package:ansicolor/ansicolor.dart';
 export 'package:dartx/dartx.dart';
 export 'package:dartz/dartz.dart'
@@ -24,3 +26,8 @@ export 'package:uuid/uuid.dart';
 export 'package:logger/logger.dart';
 export 'package:stack_trace/stack_trace.dart';
 export 'package:enum_to_string/enum_to_string.dart';
+export 'package:device_info_plus/device_info_plus.dart';
+export 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
+export 'package:package_info_plus/package_info_plus.dart';
+export 'package:version/version.dart';
+export 'package:crypto/crypto.dart';

@@ -20,12 +20,23 @@ dependencies:
   rxdart: ^0.27.7
   enum_to_string: ^2.0.1
   dartz: ^0.10.1
+  image_compression_flutter: ^1.0.3
+  package_info_plus: ^5.0.1
+  device_info_plus: ^9.1.1
+  flutter_keyboard_visibility: ^5.4.1
+  version: ^3.0.2
+  crypto: ^3.0.3
+  share_plus: ^7.2.1
+  url_strategy: ^0.2.0
+
 
   #PLATFORM: Android, iOS, Linux, MacOS, Windows
   path_provider: ^2.1.1
+  universal_html: ^2.2.4
+  universal_io: ^2.2.2
 
-  #PLATFORM: Android, iOS, Web
-  flutter_image_compress: ^2.1.0
+  #PLATFORM: Android, iOS, MacOS, Web
+#  flutter_image_compress: ^2.1.0
 
 dev_dependencies:
   flutter_lints: ^3.0.1
