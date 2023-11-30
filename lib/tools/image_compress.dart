@@ -4,8 +4,6 @@ import 'package:path_provider/path_provider.dart' as path_provider;
 
 class ImageCompressTool {
 
-
-
   static Future<ImageFile> _compressAndGetFile({
     required ImageFile file,
     required ImageOutputType outputType,
