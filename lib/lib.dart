@@ -31,3 +31,4 @@ export 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
 export 'package:package_info_plus/package_info_plus.dart';
 export 'package:version/version.dart';
 export 'package:crypto/crypto.dart';
+export 'package:path_provider/path_provider.dart';
