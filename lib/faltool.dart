@@ -6,7 +6,7 @@ export 'group_data/group.dart';
 export 'extensions/extensions.dart';
 export 'utils/utils.dart';
 
-export 'package:universal_io/io.dart';
+export 'package:universal_io/io.dart' hide SocketException;
 export 'package:dartx/dartx.dart';
 export 'package:dartz/dartz.dart'
     hide
