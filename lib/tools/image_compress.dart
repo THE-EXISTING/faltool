@@ -4,23 +4,23 @@ import 'package:path_provider/path_provider.dart' as path_provider;
 
 class ImageCompressTool {
 
-  static Future<ImageFile> _compressAndGetFile({
-    required ImageFile file,
-    required ImageOutputType outputType,
-    int quality = 80,
-    bool useJpgPngNativeCompressor = false,
-  }) async {
-    return await compressor.compressJpg(
-      ImageFileConfiguration(
-        input: file,
-        config: Configuration(
-          outputType: outputType,
-          quality: quality,
-          useJpgPngNativeCompressor: useJpgPngNativeCompressor,
-        ),
-      ),
-    );
-  }
+  // static Future<ImageFile> _compressAndGetFile({
+  //   required ImageFile file,
+  //   required ImageOutputType outputType,
+  //   int quality = 80,
+  //   bool useJpgPngNativeCompressor = false,
+  // }) async {
+  //   return await compressor.compressJpg(
+  //     ImageFileConfiguration(
+  //       input: file,
+  //       config: Configuration(
+  //         outputType: outputType,
+  //         quality: quality,
+  //         useJpgPngNativeCompressor: useJpgPngNativeCompressor,
+  //       ),
+  //     ),
+  //   );
+  // }
 
 
   // static Future<XFile?> compressImageFile({required File file}) async {

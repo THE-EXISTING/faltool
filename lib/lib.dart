@@ -6,7 +6,7 @@ export 'utils/utils.dart';
 
 export 'package:universal_io/io.dart' hide SocketException;
 export 'package:equatable/equatable.dart';
-export 'package:image_compression_flutter/image_compression_flutter.dart';
+// export 'package:image_compression_flutter/image_compression_flutter.dart';
 export 'package:ansicolor/ansicolor.dart';
 export 'package:dartx/dartx.dart';
 export 'package:dartz/dartz.dart'
