@@ -9,20 +9,38 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  flutter_lints: ^2.0.2
+
+  #PLATFORM: All
   equatable: ^2.0.5
-  flutter_image_compress: ^2.0.3
-  ansicolor: ^2.0.1
-  uuid: ^3.0.7
-  path_provider: ^2.0.15
-  logger: ^1.4.0
+  ansicolor: ^2.0.2
+  uuid: ^4.2.1
+  logger: ^2.0.2+1
   stack_trace: ^1.11.0
-  dartx: ^1.1.0
+  dartx: ^1.2.0
   rxdart: ^0.27.7
   enum_to_string: ^2.0.1
   dartz: ^0.10.1
+#  image_compression_flutter: ^1.0.3
+  package_info_plus: ^5.0.1
+  device_info_plus: ^9.1.1
+  flutter_keyboard_visibility: ^5.4.1
+  version: ^3.0.2
+  crypto: ^3.0.3
+  share_plus: ^7.2.1
+  url_strategy: ^0.2.0
+
+
+  #PLATFORM: Android, iOS, Linux, MacOS, Windows
+  path_provider: ^2.1.1
+  universal_html: ^2.2.4
+  universal_io: ^2.2.2
+
+  #PLATFORM: Android, iOS, MacOS, Web
+#  flutter_image_compress: ^2.1.0
 
 dev_dependencies:
+  flutter_lints: ^3.0.1
+
   flutter_test:
     sdk: flutter
 

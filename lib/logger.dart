@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print
+
 import 'dart:convert';
 
 import 'package:faltool/lib.dart';
@@ -24,40 +26,67 @@ class Log {
     );
   }
 
-  static void v(Object? message, [StackTrace? stackTrace]) {
+  static void t(Object? message,
+      {DateTime? time, Object? error, StackTrace? stackTrace}) {
     if (!kReleaseMode) {
-      _logger.v(message, null, stackTrace);
+      _logger.t(message?.toString() ?? 'Null',
+          time: time, error: error, stackTrace: stackTrace);
     }
   }
 
-  static void d(Object? message, [StackTrace? stackTrace]) {
+  static void d(Object? message,
+      {DateTime? time, Object? error, StackTrace? stackTrace}) {
     if (!kReleaseMode) {
-      _logger.d(message, null, stackTrace);
+      _logger.d(message?.toString() ?? 'Null',
+          time: time, error: error, stackTrace: stackTrace);
     }
   }
 
-  static void i(Object? message, [StackTrace? stackTrace]) {
+  static void i(Object? message,
+      {DateTime? time, Object? error, StackTrace? stackTrace}) {
     if (!kReleaseMode) {
-      _logger.i(message, null, stackTrace);
+      _logger.i(message?.toString() ?? 'Null',
+          time: time, error: error, stackTrace: stackTrace);
     }
   }
 
-  static void w(Object? message, [StackTrace? stackTrace]) {
+  static void w(Object? message,
+      {DateTime? time, Object? error, StackTrace? stackTrace}) {
     if (!kReleaseMode) {
       if (message is Error) {
-        _logger.w(message.toString(), message, stackTrace ?? Trace.current());
+        _logger.w(message.toString(),
+            time: time,
+            error: message,
+            stackTrace: stackTrace ?? message.stackTrace);
       } else {
-        _logger.w(message.toString(), null, stackTrace ?? Trace.current());
+        _logger.w(message?.toString() ?? 'Null',
+            time: time, error: error, stackTrace: stackTrace);
       }
     }
   }
 
-  static void e(Object? message, [StackTrace? stackTrace]) {
+  static void error(Object error, [StackTrace? stackTrace]) {
+    if (!kReleaseMode) {
+      if (error is Error) {
+        _logger.e(error.toString(),
+            error: error, stackTrace: stackTrace ?? error.stackTrace);
+      } else {
+        _logger.e(error.toString(), stackTrace: stackTrace);
+      }
+    }
+  }
+
+  static void e(Object? message,
+      {DateTime? time, Object? error, StackTrace? stackTrace}) {
     if (!kReleaseMode) {
       if (message is Error) {
-        _logger.e(message.toString(), message, stackTrace ?? Trace.current());
+        _logger.e(message.toString(),
+            time: time,
+            error: message,
+            stackTrace: stackTrace ?? message.stackTrace);
       } else {
-        _logger.e(message.toString(), null, stackTrace ?? Trace.current());
+        _logger.e(message?.toString() ?? 'Null',
+            time: time, error: error, stackTrace: stackTrace);
       }
     }
   }
@@ -65,7 +94,9 @@ class Log {
   static void title(Object? message) {
     if (!kReleaseMode) {
       JsonEncoder encoder = const JsonEncoder.withIndent('  ');
-      String prettyPrint = encoder.convert(message.toString());
+      String prettyPrint = encoder.convert(
+        message?.toString() ?? 'Null',
+      );
       _printLong(_title(prettyPrint));
     }
   }
@@ -73,14 +104,18 @@ class Log {
   static void success(Object? message) {
     if (!kReleaseMode) {
       JsonEncoder encoder = const JsonEncoder.withIndent('  ');
-      String prettyPrint = encoder.convert(message.toString());
+      String prettyPrint = encoder.convert(
+        message?.toString() ?? 'Null',
+      );
       _printLong(_success(prettyPrint));
     }
   }
 
-  static void wtf(Object? message, [String? error, StackTrace? stackTrace]) {
+  static void f(Object? message,
+      {DateTime? time, Object? error, StackTrace? stackTrace}) {
     if (!kReleaseMode) {
-      _logger.wtf(Trace.current(), message.toString(), stackTrace);
+      _logger.f(message?.toString() ?? 'Null',
+          time: time, error: error, stackTrace: stackTrace);
     }
   }
 
