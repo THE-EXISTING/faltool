@@ -7,6 +7,7 @@ export 'extensions/extensions.dart';
 export 'utils/utils.dart';
 
 export 'package:universal_io/io.dart' hide SocketException, HttpResponse;
+export 'package:equatable/equatable.dart';
 export 'package:dartx/dartx.dart';
 export 'package:dartz/dartz.dart'
     hide
