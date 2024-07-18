@@ -1,13 +1,25 @@
 import 'package:faltool/lib.dart';
 
-extension FalconEnumStringExtension on String {
-  T toEnum<T>(List<T> enumValues) => enumValues.firstWhere((e) => e.toString() == this);
+extension FalconEnumStringExtension<T extends Enum> on String {
+  T toEnum(
+    List<T> enumValues, {
+    bool caseSensitive = true,
+  }) =>
+      caseSensitive
+          ? enumValues.firstWhere((e) => e.toValueString() == this)
+          : enumValues.firstWhere(
+              (e) => e.toValueString().toLowerCase() == toLowerCase());
 
-  T? toEnumOrNull<T>(List<T> enumValues) => enumValues.firstOrNullWhere((e) => e.toString() == this);
+  T? toEnumOrNull(
+    List<T> enumValues, {
+    bool caseSensitive = true,
+  }) =>
+      caseSensitive
+          ? enumValues.firstOrNullWhere((e) => e.toValueString() == this)
+          : enumValues.firstOrNullWhere(
+              (e) => e.toValueString().toLowerCase() == toLowerCase());
 }
 
 extension FalconEnumExtension on Enum {
-  String toValueString(){
-    return EnumToString.convertToString(this);
-  }
+  String toValueString() => EnumToString.convertToString(this);
 }
