@@ -1,4 +1,5 @@
 import 'package:faltool/lib.dart';
+import 'dart:convert';
 
 extension FalconStringExtension on String {
   static const _urlPattern =
@@ -11,6 +12,17 @@ extension FalconStringExtension on String {
     return regexUrl.hasMatch(this);
   }
 
+  bool get isJson {
+    try {
+      json.decode(this);
+      return true;
+    } catch (e) {
+      return false;
+    }
+  }
+
+  bool get isNotJson => !isJson;
+
   bool get isNotUrl => !isUrl;
 
   int toIntOrZero() {
@@ -20,6 +32,26 @@ extension FalconStringExtension on String {
   }
 
   String get removeHttp => replaceAll(RegExp(r'https?://'), '');
+
+  Map<String, dynamic> toMap() {
+    return json.decode(this);
+  }
+
+  Map<String, dynamic>? toMapOrNull() {
+    try {
+      return json.decode(this);
+    } catch (e) {
+      return null;
+    }
+  }
+
+  Map<String, dynamic> toMapOrEmpty() {
+    try {
+      return json.decode(this);
+    } catch (e) {
+      return {};
+    }
+  }
 
   bool toBoolean() {
     return (toLowerCase() == "true" || toLowerCase() == "1")
