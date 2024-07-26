@@ -8,11 +8,13 @@ extension FalconEnumStringExtension on String {
   }) =>
       caseSensitive
           ? enumValues.firstWhere(
-              (e) => e.toValueString() == this,
+              (e) => (e.toValueString() == this) || (e.toString() == this),
               orElse: () => defaultValue!,
             )
           : enumValues.firstWhere(
-              (e) => e.toValueString().toLowerCase() == toLowerCase(),
+              (e) =>
+                  (e.toValueString().toLowerCase() == toLowerCase()) ||
+                  (e.toString().toLowerCase() == toLowerCase()),
               orElse: () => defaultValue!,
             );
 
@@ -21,9 +23,11 @@ extension FalconEnumStringExtension on String {
     bool caseSensitive = false,
   }) =>
       caseSensitive
-          ? enumValues.firstOrNullWhere((e) => e.toValueString() == this)
-          : enumValues.firstOrNullWhere(
-              (e) => e.toValueString().toLowerCase() == toLowerCase());
+          ? enumValues.firstOrNullWhere(
+              (e) => (e.toValueString() == this) || (e.toString() == this))
+          : enumValues.firstOrNullWhere((e) =>
+              (e.toValueString().toLowerCase() == toLowerCase()) ||
+              (e.toString().toLowerCase() == toLowerCase()));
 }
 
 extension FalconEnumExtension on Enum {

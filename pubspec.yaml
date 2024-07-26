@@ -1,6 +1,6 @@
 name: faltool
 description: A new Flutter package project.
-version: 1.0.7
+version: 1.0.8
 
 environment:
   sdk: '>=3.4.0 <4.0.0'
