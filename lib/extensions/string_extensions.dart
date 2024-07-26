@@ -80,6 +80,17 @@ extension FalconStringNullExtension on String? {
     return regexUrl.hasMatch(this ?? '');
   }
 
+  bool get isJson {
+    try {
+      json.decode(this!);
+      return true;
+    } catch (e) {
+      return false;
+    }
+  }
+
+  bool get isNotJson => !isJson;
+
   bool get isNotUrl => !isUrl;
 
   int toIntOrZero() {
@@ -103,5 +114,25 @@ extension FalconStringNullExtension on String? {
         : (this?.toLowerCase() == "false" || this?.toLowerCase() == "0"
             ? false
             : null);
+  }
+
+  Map<String, dynamic> toMap() {
+    return json.decode(this!);
+  }
+
+  Map<String, dynamic>? toMapOrNull() {
+    try {
+      return json.decode(this!);
+    } catch (e) {
+      return null;
+    }
+  }
+
+  Map<String, dynamic> toMapOrEmpty() {
+    try {
+      return json.decode(this!);
+    } catch (e) {
+      return {};
+    }
   }
 }
