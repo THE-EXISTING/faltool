@@ -54,25 +54,38 @@ class Log {
       {DateTime? time, Object? error, StackTrace? stackTrace}) {
     if (!kReleaseMode) {
       if (message is Error) {
-        _logger.w(message.toString(),
-            time: time,
-            error: message,
-            stackTrace: stackTrace ?? message.stackTrace);
+        _logger.w(
+          message.toString(),
+          time: time,
+          error: error ?? message,
+          stackTrace: stackTrace ?? message.stackTrace,
+        );
+      } else if (message is Exception) {
+        _logger.w(
+          message.toString(),
+          time: time,
+          error: error ?? message,
+          stackTrace: stackTrace,
+        );
       } else {
-        _logger.w(message?.toString() ?? 'Null',
-            time: time, error: error, stackTrace: stackTrace);
+        _logger.w(
+          message.toString(),
+          time: time,
+          error: error,
+          stackTrace: stackTrace,
+        );
       }
     }
   }
 
-  static void error(Object error, [StackTrace? stackTrace]) {
+  static void error(Object error, StackTrace stackTrace, {DateTime? time}) {
     if (!kReleaseMode) {
-      if (error is Error) {
-        _logger.e(error.toString(),
-            error: error, stackTrace: stackTrace ?? error.stackTrace);
-      } else {
-        _logger.e(error.toString(), stackTrace: stackTrace);
-      }
+      _logger.e(
+        error.toString(),
+        error: error,
+        stackTrace: stackTrace,
+        time: time,
+      );
     }
   }
 
@@ -80,13 +93,26 @@ class Log {
       {DateTime? time, Object? error, StackTrace? stackTrace}) {
     if (!kReleaseMode) {
       if (message is Error) {
-        _logger.e(message.toString(),
-            time: time,
-            error: message,
-            stackTrace: stackTrace ?? message.stackTrace);
+        _logger.e(
+          message.toString(),
+          time: time,
+          error: error ?? message,
+          stackTrace: stackTrace ?? message.stackTrace,
+        );
+      } else if (message is Exception) {
+        _logger.e(
+          message.toString(),
+          time: time,
+          error: error ?? message,
+          stackTrace: stackTrace,
+        );
       } else {
-        _logger.e(message?.toString() ?? 'Null',
-            time: time, error: error, stackTrace: stackTrace);
+        _logger.e(
+          message.toString(),
+          time: time,
+          error: error,
+          stackTrace: stackTrace,
+        );
       }
     }
   }
