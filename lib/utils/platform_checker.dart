@@ -22,53 +22,62 @@ class PlatformChecker {
   }
 
   static bool get isMobile => isAndroid || isIos;
-
-  static bool get isMobileApp => (isAndroid || isIos) && isNotWeb;
-
+  static bool get isNotMobile => !isMobile;
+  static bool get isMobileNative => (isAndroid || isIos) && isNotWeb;
+  static bool get isNotMobileNative => !isMobileNative;
   static bool get isMobileOnWeb => (isAndroid || isIos) && isWeb;
+  static bool get isNotMobileOnWeb => !isMobileOnWeb;
 
   static bool get isDesktop => isMacOs || isLinux || isWindows || isFuchsia;
+  static bool get isNotDesktop => !isDesktop;
+  static bool get isDesktopNative => (isMacOs || isLinux || isWindows || isFuchsia) && isNotWeb;
+  static bool get isNotDesktopNative => !isDesktopNative;
+  static bool get isDesktopOnWeb => (isMacOs || isLinux || isWindows || isFuchsia) && isWeb;
+  static bool get isNotDesktopOnWeb => !isDesktopOnWeb;
 
   static bool get isWeb => kIsWeb;
-
   static bool get isNotWeb => !kIsWeb;
 
   ///========================= PLATFORM =========================///
   static bool get isAndroid => Platform.isAndroid;
-
   static bool get isNotAndroid => !isAndroid;
-
-  static bool get isAndroidApp => isAndroid && isNotWeb;
-
-  static bool get isNotAndroidApp => !isAndroidApp;
-
-  static bool get isAndroidOnWeb => userAgent.contains('Android');
+  static bool get isAndroidNative => isAndroid && isNotWeb;
+  static bool get isNotAndroidNative => !isAndroidNative;
+  static bool get isAndroidOnWeb => isWeb && userAgent.toLowerCase().contains('android');
+  static bool get isNotAndroidOnWeb => !isAndroidOnWeb;
 
   static bool get isIos => Platform.isIOS;
-
-  static bool get isIosApp => isIos && isNotWeb;
-
-  static bool get isIosOnWeb => userAgent.contains('iPhone');
+  static bool get isNotIos => !isIos;
+  static bool get isIosNative => isIos && isNotWeb;
+  static bool get isNotIosNative => !isIosNative;
+  static bool get isIosOnWeb => isWeb && userAgent.toLowerCase().contains('iphone');
+  static bool get isNotIosOnWeb => !isIosOnWeb;
 
   static bool get isLinux => Platform.isLinux;
-
-  static bool get isLinuxApp => isLinux && isNotWeb;
-
-  static bool get isLinuxOnWeb => userAgent.contains('Linux');
+  static bool get isNotLinux => !isLinux;
+  static bool get isLinuxNative => isLinux && isNotWeb;
+  static bool get isNotLinuxNative => !isLinuxNative;
+  static bool get isLinuxOnWeb => isWeb && userAgent.toLowerCase().contains('linux');
+  static bool get isNotLinuxOnWeb => !isLinuxOnWeb;
 
   static bool get isWindows => Platform.isWindows;
-
-  static bool get isWindowsApp => isWindows && isNotWeb;
-
-  static bool get isWindowsOnWeb => userAgent.contains('Windows');
+  static bool get isNotWindows => !isWindows;
+  static bool get isWindowsNative => isWindows && isNotWeb;
+  static bool get isNotWindowsNative => !isWindowsNative;
+  static bool get isWindowsOnWeb => isWeb && userAgent.toLowerCase().contains('windows');
+  static bool get isNotWindowsOnWeb => !isWindowsOnWeb;
 
   static bool get isMacOs => Platform.isMacOS;
-
-  static bool get isMacOsApp => Platform.isMacOS && isNotWeb;
-
-  static bool get isMacOsOnWeb => userAgent.contains('Macintosh');
+  static bool get isNotMacOs => !isMacOs;
+  static bool get isMacOsNative => isMacOs && isNotWeb;
+  static bool get isNotMacOsNative => !isMacOsNative;
+  static bool get isMacOsOnWeb => isWeb && userAgent.toLowerCase().contains('macintosh');
+  static bool get isNotMacOsOnWeb => !isMacOsOnWeb;
 
   static bool get isFuchsia => Platform.isFuchsia;
+  static bool get isNotFuchsia => !isFuchsia;
+  static bool get isFuchsiaNative => isFuchsia && isNotWeb;
+  static bool get isNotFuchsiaNative => !isFuchsiaNative;
 
   static Future<bool> get isChromeOS async {
     final packageInfo = await PackageInfo.fromPlatform();
@@ -92,7 +101,6 @@ class PlatformChecker {
 
   static bool get isChromeWeb =>
       userAgent.contains('Chrome') && !userAgent.contains('Chromium');
-
   static bool get isChromiumWeb => !userAgent.contains('Chromium');
 
   static bool get isFirefoxWeb => userAgent.contains('Firefox');
